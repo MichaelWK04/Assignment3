@@ -1,201 +1,151 @@
 <!DOCTYPE html>
-<html lang="en">
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-<link href="Lectures.css" rel="stylesheet" type="text/css" />
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/lectures.css') }}" />
+    <title>CSCB20 - Lectures</title>
+</head>
 
 <body>
-  <nav id="navbar">
-    <h1 class="navbar-title">
-      <a href="index.html">CSCB20</a>
-    </h1>
-    <input type="checkbox" id="check" />
-    <label for="check" class="checkbtn">
-      <img src="menubar/icons8-menu-bar-50.png" alt="" />
-    </label>
-    <ul class="navbar-links">
-      <li class="navbar-link">
-        <a href="courseteam.html">Course Team</a>
-      </li>
-      <li class="navbar-link">
-        <a href="https://piazza.com/class/lqy466htv8g5xb">Piazza</a>
-      </li>
-      <li class="navbar-link">
-        <a href="Calendar.html">Calendar</a>
-      </li>
-      <li class="navbar-link">
-        <a href="Lectures.html">Lectures</a>
-      </li>
-      <li class="navbar-link">
-        <a href="Lab.html">Labs</a>
-      </li>
-      <li class="navbar-link">
-        <a href="assignments.html">Assignments</a>
-      </li>
-      <li class="navbar-link">
-        <a href="tests.html">Tests</a>
-      </li>
-      <li class="navbar-link">
-        <a href="resources.html">Resources</a>
-      </li>
-      <li class="navbar-link">
-        <a href="feedback.html">Feedback</a>
-      </li>
-    </ul>
-  </nav>
-  <div id="content">
-    <h3>Lecture Slides</h3>
-    <hr>
-    <p class="info">Each week's lecture materials and in class-work</p>
-    <div class="tbody">
-      <table>
-        <tbody>
-          <tr>
-            <th>Week</th>
-            <th>Topic</th>
-            <th>Reading</th>
-            <th>Lecture Material</th>
-            <th>In Class</th>
-          </tr>
-          <tr>
-            <td>1</td>
-            <td>Relation Algebra</td>
-            <td><a href="https://dbis-uibk.github.io/relax/calc/local/uibk/local/0">Relational Algebra Calculator</a>
-            </td>
-            <td>
-              <a href="Pdf/Dummy.pdf">Week1 Relation Algebra</a>
-            </td>
-            <td><a href="Pdf/Dummy.pdf"></a>Worksheet <a href="">Worksheet soln</a></td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Wrapping up Relational Algebra and starting with SQL</td>
-            <td><a href="Pdf/Dummy.pdf">SQLite</a></td>
-            <td>
-              <a href="Pdf/Dummy.pdf">RA and Intro to SQL</a>
-            </td>
-            <td><a href="Pdf/Dummy.pdf">Worksheet</a>
-              <a href="Pdf/Dummy.pdf">Solutions</a>
-            </td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>SQL Queries</td>
-            <td>
-              <a href="Pdf/Dummy.pdf">Resources</a>
-              <a href="Pdf/Dummy.pdf">Division Operator in RA</a>
-            </td>
-            <td>
-              <a href="Pdf/Dummy.pdf">SQL</a>
-            </td>
-            <td>
-              <a href="Pdf/Dummy.pdf">More SQL queries practice</a>
-            </td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>SQL subqueries and Introduction to Web Development</td>
-            <td>
-              <a href="Pdf/Dummy.pdf">Databases</a>
-              <a href="Pdf/Dummy.pdf">RA algorithms</a>
-            </td>
-            <td>
-              <a href="Pdf/Dummy.pdf">SQL-subqueries</a>
-            </td>
-            <td>
-            </td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>Introduction to Flask, Introduction to HTML and CSS</td>
-            <td><a href="Pdf/Dummy.pdf">Code handout</a></td>
-            <td>
-              <a href="Pdf/Dummy.pdf">Intro to Web Development</a>
-            </td>
-            <td>
-              <a href="Pdf/Dummy.pdf">All about Flask</a>
-              <a href="Pdf/Dummy.pdf">Python Flask Project</a>
-            </td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td>HTML Forms, CSS Box Model, Flexbox, Grid</td>
-            <td>
-              <a href="Pdf/Dummy.pdf">Code handout</a>
-              <a href="Pdf/Dummy.pdf">HTML and CSS(read before next week)</a>
-            </td>
-            <td>
-              <a href="Pdf/Dummy.pdf">HTML and CSS, Flask(Recorded)</a>
-            </td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>7</td>
-            <td>Media Queries, Introduction to JavaScript</td>
-            <td>
-              <a href="Pdf/Dummy.pdf">Code handout</a>
-              <a href="Pdf/Dummy.pdf">JavaScript Documentation</a>
-            </td>
-            <td>
-              <a href="Pdf/Dummy.pdf">Media Queries and JavaScript</a>
-            </td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>8</td>
-            <td>Flask and SQL</td>
-            <td><a href="">Flask-SQLAlchemy </a></td>
-            <td>
-              <a href="Pdf/Dummy.pdf">SQLite and Flask</a>
-            </td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>9</td>
-            <td>Flask, Sessions and Authentication</td>
-            <td><a href="Pdf/Dummy.pdf">Documentations for Flask</a></td>
-            <td>
-              <a href="Pdf/Dummy.pdf  ">Sessions, Password Hasing, User Authentication</a>
-            </td>
-          </tr>
-          <tr>
-            <td>10</td>
-            <td></td>
-            <td></td>
-            <td>
-            </td>
-          </tr>
-          <tr>
-            <td>11</td>
-            <td></td>
-            <td></td>
-            <td>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+    {% extends "template.html" %}
+    {% block content %}
+    <div id="content">
+        <h3>Lecture Slides</h3>
+        <hr>
+        <p class="info">Each week's lecture materials and in class-work</p>
+        <div class="tbody">
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Week</th>
+                        <th>Topic</th>
+                        <th>Reading</th>
+                        <th>Lecture Material</th>
+                        <th>In Class</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>Relation Algebra</td>
+                        <td><a href="https://dbis-uibk.github.io/relax/calc/local/uibk/local/0">Relational Algebra
+                                Calculator</a>
+                        </td>
+                        <td>
+                            <a href="Pdf/Dummy.pdf">Week1 Relation Algebra</a>
+                        </td>
+                        <td><a href="Pdf/Dummy.pdf"></a>Worksheet <a href="">Worksheet soln</a></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Wrapping up Relational Algebra and starting with SQL</td>
+                        <td><a href="Pdf/Dummy.pdf">SQLite</a></td>
+                        <td>
+                            <a href="Pdf/Dummy.pdf">RA and Intro to SQL</a>
+                        </td>
+                        <td><a href="Pdf/Dummy.pdf">Worksheet</a>
+                            <a href="Pdf/Dummy.pdf">Solutions</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>SQL Queries</td>
+                        <td>
+                            <a href="Pdf/Dummy.pdf">Resources</a>
+                            <a href="Pdf/Dummy.pdf">Division Operator in RA</a>
+                        </td>
+                        <td>
+                            <a href="Pdf/Dummy.pdf">SQL</a>
+                        </td>
+                        <td>
+                            <a href="Pdf/Dummy.pdf">More SQL queries practice</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>SQL subqueries and Introduction to Web Development</td>
+                        <td>
+                            <a href="Pdf/Dummy.pdf">Databases</a>
+                            <a href="Pdf/Dummy.pdf">RA algorithms</a>
+                        </td>
+                        <td>
+                            <a href="Pdf/Dummy.pdf">SQL-subqueries</a>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Introduction to Flask, Introduction to HTML and CSS</td>
+                        <td><a href="Pdf/Dummy.pdf">Code handout</a></td>
+                        <td>
+                            <a href="Pdf/Dummy.pdf">Intro to Web Development</a>
+                        </td>
+                        <td>
+                            <a href="Pdf/Dummy.pdf">All about Flask</a>
+                            <a href="Pdf/Dummy.pdf">Python Flask Project</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>HTML Forms, CSS Box Model, Flexbox, Grid</td>
+                        <td>
+                            <a href="Pdf/Dummy.pdf">Code handout</a>
+                            <a href="Pdf/Dummy.pdf">HTML and CSS(read before next week)</a>
+                        </td>
+                        <td>
+                            <a href="Pdf/Dummy.pdf">HTML and CSS, Flask(Recorded)</a>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Media Queries, Introduction to JavaScript</td>
+                        <td>
+                            <a href="Pdf/Dummy.pdf">Code handout</a>
+                            <a href="Pdf/Dummy.pdf">JavaScript Documentation</a>
+                        </td>
+                        <td>
+                            <a href="Pdf/Dummy.pdf">Media Queries and JavaScript</a>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Flask and SQL</td>
+                        <td><a href="">Flask-SQLAlchemy </a></td>
+                        <td>
+                            <a href="Pdf/Dummy.pdf">SQLite and Flask</a>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Flask, Sessions and Authentication</td>
+                        <td><a href="Pdf/Dummy.pdf">Documentations for Flask</a></td>
+                        <td>
+                            <a href="Pdf/Dummy.pdf  ">Sessions, Password Hasing, User Authentication</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-  </div>
-  <footer>
-    <div class="contact">
-      <h4>Contact the instructor:</h4>
-      <ul>
-        <li>Name: Purva Gawde</li>
-        <li>Email: purva.gawde@utoronto.ca</li>
-        <li>Phone: (647) 601-4658</li>
-        <li>Office: IC 484</li>
-        <li>Office Hours: TUE 12:00 - 13:00</li>
-      </ul>
-    </div>
-    <div class="copyright">
-      <a href="https://web.cs.toronto.edu/about/our-department">UofT Faculty of Computer Science</a>
-      <p>
-        Site designed and created by Michael Walker, Michael Kim and Orhan
-        Cangurel
-      </p>
-    </div>
-  </footer>
+    {% endblock %}
 </body>
 
 </html>

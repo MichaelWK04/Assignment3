@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="tests.css" />
-    <title>CSCB20 - Tests</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/template.css') }}" />
+    <title>CSCB20 - Template</title>
 </head>
 
 <body>
@@ -47,6 +47,10 @@
             </li>
         </ul>
     </nav>
+
+    {% block content %}
+    {% endblock %}
+
     <footer>
         <div class="contact">
             <h4>Contact the instructor:</h4>
