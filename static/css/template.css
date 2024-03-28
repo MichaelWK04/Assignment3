@@ -141,10 +141,6 @@ footer a:active {
 }
 
 @media screen and (max-width: 900px) {
-  #home {
-    padding: 20px 20px 100px;
-  }
-
   footer {
     flex-direction: column;
   }

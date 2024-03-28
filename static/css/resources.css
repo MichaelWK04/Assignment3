@@ -58,48 +58,6 @@
   font-weight: bold;
 }
 
-footer {
-  height: auto;
-  background-color: #2f2e2e;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 30px;
-  margin-top: auto;
-}
-
-footer a:link,
-footer a:visited {
-  color: #666666;
-}
-
-footer a:hover {
-  color: #aaaaaa;
-}
-
-footer a:active {
-  color: #dddddd;
-}
-
-.contact li {
-  margin-bottom: 5px;
-  list-style-type: none;
-}
-
-.contact h4 {
-  margin-bottom: 10px;
-}
-
-.copyright {
-  text-align: right;
-  align-self: flex-end;
-}
-
-.copyright p {
-  margin-top: 10px;
-}
-
 @media screen and (max-width: 900px) {
   #content {
     padding: 12px;
@@ -113,15 +71,5 @@ footer a:active {
   .mathlab .email,
   .mathlab .password {
     margin-left: 25px;
-  }
-
-  footer {
-    flex-direction: column;
-  }
-
-  .copyright {
-    margin-top: 20px;
-    text-align: left;
-    align-self: flex-start;
   }
 }
