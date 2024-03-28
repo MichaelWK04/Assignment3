@@ -3,6 +3,10 @@
   background-color: white;
 }
 
+#content h1 {
+  font-size: 2.5em;
+}
+
 #content h3 {
   padding: 30px;
   font-size: 2em;
