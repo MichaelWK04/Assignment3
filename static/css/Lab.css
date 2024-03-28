@@ -38,16 +38,9 @@
   margin-bottom: 10px;
 }
 
-p.Info {
+p .info {
   margin-left: 10px;
   padding-bottom: 5px;
-}
-
-td {
-  border-color: blue;
-  text-align: center;
-  box-sizing: content-box;
-
 }
 
 #content a:link,
@@ -61,17 +54,6 @@ td {
 
 #content a:active {
   color: #DDDDDD;
-}
-
-#content h6 {
-  margin-left: 10px;
-  font-size: 2em;
-  margin-bottom: 10px;
-}
-
-p.Info {
-  margin-left: 10px;
-  padding-bottom: 5px;
 }
 
 td {
