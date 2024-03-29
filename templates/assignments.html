@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/assignments.css') }}" />
+    <title>CSCB20 - Assignments</title>
+</head>
+  <body>
+    {% extends "template.html" %}
+    {% block content %}
+    <div id="assignments">
+      <h1>Assignments</h1>
+      <p>
+        Here are the assignment and exercise topics, weights and due dates.
+      </p>
+      <p>
+        All assignments and exercises will be submitted on
+        <a href="https://markus2.utsc.utoronto.ca" target="_blank">MarkUs</a>
+      </p>
+      <div class="tbody">
+        <table>
+          <tr>
+            <th>Assignment No.</th>
+            <th>Exercise</th>
+            <th>Topic</th>
+            <th>Weight</th>
+            <th>Due Date</th>
+            <th>Solution</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td><a href="{{ url_for('static', filename='pdf/Dummy.pdf') }}" target="_blank">A1</a></td>
+            <td>Relational Algebra, SQL</td>
+            <td>8%</td>
+            <td>February 14</td>
+            <td><a href="{{ url_for('static', filename='pdf/Dummy.pdf') }}" target="_blank">Solution 1</a></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><a href="{{ url_for('static', filename='pdf/Dummy.pdf') }}" target="_blank">A2</a></td>
+            <td>HTML, CSS</td>
+            <td>10%</td>
+            <td>March 15</td>
+            <td><a href="{{ url_for('static', filename='pdf/Dummy.pdf') }}" target="_blank">Solution 2</a></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><a href="{{ url_for('static', filename='pdf/Dummy.pdf') }}" target="_blank">A3</a></td>
+            <td>Everything</td>
+            <td>15%</td>
+            <td>April 5</td>
+            <td><a href="{{ url_for('static', filename='pdf/Dummy.pdf') }}" target="_blank">Solution 3</a></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    {% endblock %}
+  </body>
+</html>

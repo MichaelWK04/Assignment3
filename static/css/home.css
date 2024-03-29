@@ -1,0 +1,63 @@
+#home {
+  padding: 50px 50px 100px;
+  background-color: white;
+}
+
+#home h1 {
+  font-size: 3em;
+  padding-bottom: 25px;
+}
+
+#home a:link,
+#home a:visited {
+  color: #666666;
+}
+
+#home a:hover {
+  color: #aaaaaa;
+}
+
+#home a:active {
+  color: #dddddd;
+}
+
+.course-description,
+.lecture-information,
+.news {
+  margin-top: 10px;
+  padding: 40px;
+}
+
+.course-description h3 {
+  text-decoration: underline;
+}
+
+.course-description p {
+  margin-top: 10px;
+}
+
+.course-description p,
+.lecture-information p,
+.news p {
+  margin-top: 10px;
+}
+
+.course-description p span,
+.lecture-information p span {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+#home h2,
+.lecture-information h3,
+.news h3 {
+  font-size: 2.4em;
+  color: #666666;
+  font-weight: 100;
+}
+
+@media screen and (max-width: 900px) {
+  #home {
+    padding: 20px 20px 100px;
+  }
+}

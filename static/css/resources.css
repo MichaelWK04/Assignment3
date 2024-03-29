@@ -1,0 +1,74 @@
+#content {
+  padding: 50px 50px 100px;
+  background-color: white;
+}
+
+#content h1 {
+  font-size: 2.5em;
+}
+
+#content h2 {
+  font-size: 1.3em;
+  padding: 20px 0%;
+}
+
+.online-resources ul {
+  padding-left: 15px;
+  list-style-type: none;
+}
+
+.online-resources li {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+#content a:link,
+#content a:visited {
+  color: #666666;
+}
+
+#content a:hover {
+  color: #aaaaaa;
+}
+
+#content a:active {
+  color: #dddddd;
+}
+
+.mathlab {
+  margin-top: 20px;
+}
+
+.mathlab p {
+  padding: 10px 0%;
+}
+
+.mathlab .email,
+.mathlab .password {
+  margin-left: 75px;
+}
+
+.mathlab .windows {
+  margin-top: 30px;
+}
+
+.mathlab span {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 900px) {
+  #content {
+    padding: 12px;
+  }
+
+  .online-resources ul {
+    padding-left: 5px;
+    list-style-type: none;
+  }
+
+  .mathlab .email,
+  .mathlab .password {
+    margin-left: 25px;
+  }
+}

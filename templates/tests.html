@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tests.css') }}" />
+    <title>CSCB20 - Tests</title>
+</head>
+
+<body>
+    {% extends "template.html" %}
+    {% block content %}
+    <div id="content">
+        <h1>Tests</h1>
+        <h2>Winter 2024 Midterm Room Allocation</h2>
+        <div class="tbody">
+            <table>
+                <tr>
+                    <th>Course</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Capacity</th>
+                    <th>Room #</th>
+                </tr>
+                <tr>
+                    <td>CSCB20</td>
+                    <td>February 26, 2024</td>
+                    <td>9:00 - 11:00</td>
+                    <td>All students</td>
+                    <td>SW 319</td>
+                </tr>
+            </table>
+        </div>
+        <div class="extra-info">
+            <h2>Preparation</h2>
+            <p>The test will cover everything up to and including A1:</p>
+            <ul>
+                <li>Relational Databases</li>
+                <li>Relational Algebra</li>
+                <li>SQLite</li>
+            </ul>
+            <h2>Structure</h2>
+            <p>The questions in the midterm will follow this format:</p>
+            <ul>
+                <li>1-2 Short Questions (Multiple Choice or Brief Answer)</li>
+                <li>4-5 queries based on Relational Algebra</li>
+                <li>4-5 queries based on SQL</li>
+            </ul>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+
+</html>

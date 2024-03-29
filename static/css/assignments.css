@@ -1,0 +1,57 @@
+#assignments {
+  padding: 50px 50px 100px;
+  background-color: white;
+}
+
+#assignments h1 {
+  font-size: 2.5em;
+}
+
+#assignments p {
+  font-size: 1.3em;
+  margin-top: 30px;
+}
+
+#assignments .tbody {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+  margin-top: 30px;
+}
+
+#assignments table {
+  border-collapse: collapse;
+  border: 1px solid;
+  text-align: left;
+  width: 100%;
+  overflow-x: auto;
+  overflow: hidden;
+}
+
+#assignments th,
+#assignments td {
+  border: 1px solid;
+  padding: 20px;
+}
+#assignments th {
+  border-bottom: 2px solid;
+}
+
+#assignments a:link,
+#assignments a:visited {
+  color: #666666;
+}
+
+#assignments a:hover {
+  color: #aaaaaa;
+}
+
+#assignments a:active {
+  color: #dddddd;
+}
+
+@media screen and (max-width: 900px) {
+  #assignments {
+    padding: 20px 20px 100px;
+  }
+}

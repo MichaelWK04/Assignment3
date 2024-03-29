@@ -1,0 +1,88 @@
+#content {
+  padding: 50px 50px 100px;
+  background-color: white;
+}
+
+#content h1 {
+  padding-bottom: 20px;
+  font-size: 2.5em;
+  font-style: bold;
+}
+
+#content hr {
+  margin-bottom: 20px;
+}
+
+#content a:link,
+#content a:visited {
+  color: #666666;
+}
+
+#content a:hover {
+  color: #aaaaaa;
+}
+
+#content a:active {
+  color: #dddddd;
+}
+
+div .image {
+  margin-top: 5px;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+#content img {
+  overflow: hidden;
+  display: block;
+  width: 1200px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 600px) {
+  #content h6 {
+    padding: 10px;
+    padding-bottom: 5px;
+    font-size: 1.5em;
+    font-style: bold;
+  }
+
+  #content img {
+    width: 800px;
+  }
+
+  p.info {
+    padding-left: 10px;
+    padding-bottom: 10px;
+  }
+
+  td,
+  th {
+    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+
+  #content {
+    padding: 20px 20px 100px;
+  }
+
+}
+
+@media screen and (max-width: 1250px) {
+  .checkbtn {
+    display: block;
+    align-self: flex-end;
+    z-index: 5;
+  }
+
+  #content h6 {
+    padding: 20px;
+    padding-bottom: 20px;
+    font-size: 3em;
+    font-style: bold;
+  }
+}

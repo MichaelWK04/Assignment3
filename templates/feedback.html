@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/feedback.css') }}" />
+    <title>CSCB20 - Feedback</title>
+</head>
+
+<body>
+    {% extends "template.html" %}
+    {% block content %}
+    <section id="feedback">
+        <h1>Feedback</h1>
+        <p>
+            Use the form below to send an anonymous message to the instructor. You
+            don’t need name and email unless you want a direct response.
+        </p>
+        <form action="">
+            <label for="name">Name (Optional)</label>
+            <input name="name" type="text" />
+            <label for="email">Email (Optional)</label>
+            <input name="email" type="text" />
+            <label for="message">Your Message</label>
+            <textarea name="message" id="feedback-message" cols="30" rows="10" required></textarea>
+            <input type="submit" />
+        </form>
+    </section>
+    {% endblock %}
+</body>
+
+</html>

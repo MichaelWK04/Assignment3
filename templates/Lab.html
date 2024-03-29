@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/lab.css') }}" />
+    <title>CSCB20 - Labs</title>
+</head>
+
+<body>
+    {% extends "template.html" %}
+    {% block content %}
+    <div id="content">
+        <h1>Labs</h1>
+        <p class="info">
+            Make sure to attend at least 7 tutorial sessions in the different week.
+            It does not have to be your registered tutorial.
+        </p>
+        <p class="info">
+            Tutorials are held each week. The first tutorial is in week2. Please
+            make use of valuable resourcecs
+        </p>
+        <div class="tbody">
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Week</th>
+                        <th>Lab</th>
+                        <th>Solutions</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td><a href="{{ url_for('static', filename='pdf/Dummy.pdf') }}" target="_blank">Python
+                                refresher</a></td>
+                        <td><a href="{{ url_for('static', filename='pdf/Dummy.pdf') }}" target="_blank">Python refresher
+                                soln</a></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><a href="{{ url_for('static', filename='pdf/Dummy.pdf') }}" target="_blank">RA and SQL
+                                queries</a></td>
+                        <td><a href="{{ url_for('static', filename='pdf/Dummy.pdf') }}" target="_blank">RA and SQL
+                                queries solns</a></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><a href="{{ url_for('static', filename='pdf/Dummy.pdf') }}" target="_blank">SQL queries</a>
+                        </td>
+                        <td><a href="{{ url_for('static', filename='pdf/Dummy.pdf') }}" target="_blank">SQL soln</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><a href="{{ url_for('static', filename='pdf/Dummy.pdf') }}" target="_blank">More SQL and
+                                intro to HTML</a></td>
+                        <td><a href="{{ url_for('static', filename='pdf/Dummy.pdf') }}" target="_blank">SQL and HTML
+                                solns</a></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td><a href="{{ url_for('static', filename='pdf/Dummy.pdf') }}" target="_blank">Python Flask</a>
+                        </td>
+                        <td><a href="{{ url_for('static', filename='pdf/Dummy.pdf') }}" target="_blank">Python Flask
+                                solns</a></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td><a href="{{ url_for('static', filename='pdf/Dummy.pdf') }}" target="_blank">Intro to CSS</a>
+                        </td>
+                        <td><a href="{{ url_for('static', filename='pdf/Dummy.pdf') }}" target="_blank">CSS solns</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td><a href="{{ url_for('static', filename='pdf/Dummy.pdf') }}" target="_blank">CSS Flexbox</a>
+                            <br />
+                        </td>
+                        <td><a href="{{ url_for('static', filename='pdf/Dummy.pdf') }}" target="_blank">CSS Flexbox
+                                solns</a></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td><a href="{{ url_for('static', filename='pdf/Dummy.pdf') }}" target="_blank">Intro to
+                                Javascript</a></td>
+                        <td>Coming soon</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Coming soon</td>
+                        <td>Coming soon</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+
+</html>

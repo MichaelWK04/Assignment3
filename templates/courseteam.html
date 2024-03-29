@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/courseteam.css') }}" />
+    <title>CSCB20 - Course Team</title>
+</head>
+
+<body>
+    {% extends "template.html" %}
+    {% block content %}
+
+    <div id="content">
+        <h1>Course Team</h1>
+        <div class="flex-container">
+            <div class="professor">
+                <h2>Instructor: Purva Gawde</h2>
+                <img src="{{ url_for('static', filename='images/Purva.jpg') }}" />
+                <p>
+                    <b>Email:</b>
+                    <a href="mailto:purva.gawde@utoronto.ca">purva.gawde@utoronto.ca</a>
+                </p>
+                <p><b>OH Location: </b>IC 484</p>
+                <p><b>OH Time </b>TUE 12:00-13:00</p>
+            </div>
+            <div class="ta">
+                <h2>TA Information</h2>
+                <div class="tbody">
+                    <table>
+                        <tr>
+                            <th>TA</th>
+                            <th>OH Time</th>
+                            <th>OH Location</th>
+                            <th>Tutorial No.</th>
+                            <th>Tutorial Time</th>
+                        </tr>
+                        <tr>
+                            <td>Joshua Concon</td>
+                            <td>WED 15:00-16:00</td>
+                            <td>IC 402</td>
+                            <td>TUT0003</td>
+                            <td>WED 14:00-15:00</td>
+                        </tr>
+                        <tr>
+                            <td>Pourya Moghadam</td>
+                            <td>MON 11:00-12:00</td>
+                            <td>IC 402</td>
+                            <td>TUT0001</td>
+                            <td>MON 12:00-13:00</td>
+                        </tr>
+                        <tr>
+                            <td>Danny Chen</td>
+                            <td>FRI 12:00-13:00</td>
+                            <td>IC 402</td>
+                            <td>TUT0006</td>
+                            <td>WED 13:00-14:00</td>
+                        </tr>
+                        <tr>
+                            <td>Nisha Rajendran</td>
+                            <td>WED 10:00-11:00</td>
+                            <td>IC 402</td>
+                            <td>TUT0002</td>
+                            <td>WED 11:00-12:00</td>
+                        </tr>
+                        <tr>
+                            <td>Navinn Ravindaran</td>
+                            <td>FRI 11:00-12:00</td>
+                            <td>IC 402</td>
+                            <td>TUT0005</td>
+                            <td>FRI 10:00-11:00</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+
+</html>
