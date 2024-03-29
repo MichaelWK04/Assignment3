@@ -1,6 +1,42 @@
 from flask import Flask, render_template
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+
+app.config['SECRET_KEY'] = '9ef34b5735d31c656503a4c799d71674c7e0b4e2fd255d2c91b3e381af5c81dc'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+db = SQLAlchemy(app)
+
+class Student(db.Model):
+    id=db.Column(db.Integer, primary_key = True)
+    username=db.Column(db.String(20), unique = True, nullable = False)
+    email=db.Column(db.String(30), unique = True, nullable = False)
+    password=db.Column(db.String(30), nullable = False)
+    
+class Instructor(db.Model):
+    id=db.Column(db.Integer, primary_key = True)
+    username=db.Column(db.String(20), unique = True, nullable = False)
+    email=db.Column(db.String(30), unique = True, nullable = False)
+    password=db.Column(db.String(30), nullable = False)
+
+class Feedback(db.Model):
+    to=db.Column(db.String(20), primary_key = True, nullable = False)
+    q1=db.Column(db.Text, primary_key = True, nullable = False)
+    q2=db.Column(db.Text, primary_key = True, nullable = False)
+    q3=db.Column(db.Text, primary_key = True, nullable = False)
+    q4=db.Column(db.Text, primary_key = True, nullable = False)
+    
+class Mark(db.Model):
+    assesment=db.Column(db.String(20), primary_key = True, nullable = False)
+    mark=db.Column(db.Integer, primary_key = True, nullable = False)
+    sid=db.Column(db.Integer, primary_key = True, nullable = False)
+
+    
+class Remark(db.Model):
+    assesment=db.Column(db.String(20), primary_key = True, nullable = False)
+    mark=db.Column(db.Integer, primary_key = True, nullable = False)
+    sid=db.Column(db.Integer, primary_key = True, nullable = False)
+    remark=db.Column(db.Text, nullable = False)
 
 @app.route('/')
 def home():
