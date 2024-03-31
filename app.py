@@ -43,6 +43,14 @@ def home():
     pagename='home'
     return render_template('home.html', pagename=pagename)
 
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
+@app.route('/register')
+def register():
+    return render_template('register.html')
+
 @app.route('/assignments')
 def assignments():
     return render_template('assignments.html')

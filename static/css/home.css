@@ -1,26 +1,3 @@
-#home {
-  padding: 50px 50px 100px;
-  background-color: white;
-}
-
-#home h1 {
-  font-size: 3em;
-  padding-bottom: 25px;
-}
-
-#home a:link,
-#home a:visited {
-  color: #666666;
-}
-
-#home a:hover {
-  color: #aaaaaa;
-}
-
-#home a:active {
-  color: #dddddd;
-}
-
 .course-description,
 .lecture-information,
 .news {
@@ -48,16 +25,10 @@
   font-weight: bold;
 }
 
-#home h2,
+#content h2,
 .lecture-information h3,
 .news h3 {
   font-size: 2.4em;
   color: #666666;
   font-weight: 100;
-}
-
-@media screen and (max-width: 900px) {
-  #home {
-    padding: 20px 20px 100px;
-  }
 }

@@ -1,0 +1,110 @@
+#content {
+  padding: 50px 50px 100px;
+  background-color: white;
+}
+
+#content h1 {
+  font-size: 2.5em;
+  margin: 10px auto;
+  text-align: center;
+}
+
+#content form {
+  display: flex;
+  flex-direction: column;
+  max-width: 450px;
+  margin: 40px auto;
+  padding: 5% 5%;
+  border: 2px solid #d0d0d0;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="datetime"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea,
+select {
+  background-color: #ffffff;
+  border: 1px solid #e5e5e4;
+  font-size: 16px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 5px 10px;
+  height: 40px;
+  width: 100%;
+  color: #666;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  margin-bottom: 20px;
+  transition: all .2s ease;
+  box-sizing: border-box;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #444;
+}
+
+#content input[type="radio"] {
+  cursor: pointer;
+}
+
+#content .usertype {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+#content .radbuttons {
+  margin: 15px;
+}
+
+#content .radbuttons label:hover {
+  cursor: pointer;
+}
+
+#content .studentbutton {
+  margin-right: 10px;
+  display: inline;
+}
+
+#content .teacherbutton {
+  margin-left: 10px;
+  display: inline;
+}
+
+#content button {
+  margin: 0px auto;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 15px 26px;
+  color: #FFF;
+  background-color: #555;
+  border-radius: 4px;
+  border: 1px solid #444;
+  width: 50%;
+}
+
+#content button:hover {
+  background-color: #777;
+  cursor: pointer;
+}
+
+#content button:active {
+  background-color: #999;
+  cursor: pointer;
+}
+
+#content .login {
+  margin-top: 40px;
+  font-size: 14px;
+}
