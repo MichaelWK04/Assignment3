@@ -58,7 +58,7 @@ def login():
     person = Student.query.filter_by(username = username).first()
     if not person or not bcrypt.check_password_hash(person.password, password):
         if not person or not bcrypt.check_password_hash(person.password, password):
-            flash('Please check your login details and try again.', 'error')
+            flash('Please check your login details and try again.', 'Error')
             return render_template('login.html')
         else:
             student = False
