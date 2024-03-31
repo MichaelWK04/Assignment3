@@ -18,12 +18,7 @@
             <img src="{{ url_for('static', filename='images/menu-bar.png') }}" alt="" />
         </label>
         <ul class="navbar-links">
-            <li class="navbar-link">
-                <a href="{{ url_for('login') }}">Login</a>
-            </li>
-            <li class="navbar-link">
-                <a href="{{ url_for('register') }}">Register</a>
-            </li>
+            {% if session.name %}
             <li class="navbar-link">
                 <a href="{{ url_for('courseteam') }}">Course Team</a>
             </li>
@@ -51,6 +46,17 @@
             <li class="navbar-link">
                 <a href="{{ url_for('feedback') }}">Feedback</a>
             </li>
+            <li class="navbar-link">
+                <a href="{{ url_for('logout') }}">Logout</a>
+            </li>
+            {% else %}
+            <li class="navbar-link">
+                <a href="{{ url_for('login') }}">Login</a>
+            </li>
+            <li class="navbar-link">
+                <a href="{{ url_for('register') }}">Register</a>
+            </li>
+            {% endif %}
         </ul>
     </nav>
 

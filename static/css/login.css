@@ -18,6 +18,12 @@
   border: 2px solid #d0d0d0;
 }
 
+input,
+input:-webkit-autofill,
+input:autofill {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
 input[type="text"],
 input[type="password"],
 input[type="date"],
@@ -80,7 +86,13 @@ select:focus {
 }
 
 #content .register {
-  margin-top: 40px;
+  margin-top: 30px;
   font-size: 14px;
 }
 
+#content .flashes {
+  color: red;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 8px;
+}

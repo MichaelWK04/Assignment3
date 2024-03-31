@@ -31,13 +31,22 @@
                         <label for="Student">Student</label>
                     </div>
                     <div class="teacherbutton">
-                        <input type="radio" id="Teacher" name="Type">
-                        <label for="Teacher">Teacher</label>
+                        <input type="radio" id="Instructor" name="Type" value="Instructor">
+                        <label for="Instructor">Instructor</label>
                     </div>
                 </div>
             </section>
 
             <button type="register">Register</button>
+            {% with messages = get_flashed_messages(with_categories = True) %}
+            {% if messages %}
+            <ul class=flashes>
+                {% for category, message in messages %}
+                <div> <strong>{{ category }}</strong> - {{ message }} </div>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endwith %}
             <section class="login">
                 <p>Have an account? <a href="{{ url_for('login')}}">Click here to login!</a></p>
             </section>

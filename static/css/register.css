@@ -105,6 +105,13 @@ select:focus {
 }
 
 #content .login {
-  margin-top: 40px;
+  margin-top: 30px;
   font-size: 14px;
+}
+
+#content .flashes {
+  color: red;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 8px;
 }
