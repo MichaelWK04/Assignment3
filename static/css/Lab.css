@@ -47,19 +47,6 @@ p .info {
   padding-bottom: 5px;
 }
 
-#content a:link,
-#content a:visited {
-  color: #666666;
-}
-
-#content a:hover {
-  color: #AAAAAA;
-}
-
-#content a:active {
-  color: #DDDDDD;
-}
-
 td {
   text-align: center;
   box-sizing: content-box;

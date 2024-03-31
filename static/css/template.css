@@ -104,6 +104,31 @@ body {
   }
 }
 
+#content {
+  padding: 50px 50px 100px;
+  background-color: white;
+}
+
+#content h1 {
+  font-size: 2.5em;
+}
+
+#content a:link {
+  color: #7F7F7F;
+}
+
+#content a:hover {
+  color: #aaaaaa;
+}
+
+#content a:active {
+  color: #dddddd;
+}
+
+#content a:visited {
+  color: #a35cff;
+}
+
 footer {
   height: auto;
   background-color: #2f2e2e;
@@ -128,8 +153,12 @@ footer {
   align-self: flex-end;
 }
 
-footer a:visited {
+footer a:link {
   color: #666666;
+}
+
+footer a:visited {
+  color: #a35cff;
 }
 
 footer a:hover {

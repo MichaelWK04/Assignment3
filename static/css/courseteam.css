@@ -8,19 +8,6 @@
   font-size: 2.5em;
 }
 
-#content a:link,
-#content a:visited {
-  color: #666666;
-}
-
-#content a:hover {
-  color: #aaaaaa;
-}
-
-#content a:active {
-  color: #cccccc;
-}
-
 .flex-container {
   margin-top: 50px;
   display: flex;
@@ -77,6 +64,26 @@
 
 #content th {
   border-bottom: 2px solid;
+}
+
+@media screen and (max-width: 1200px) {
+  .flex-container {
+    margin-top: 50px;
+    display: block;
+  }
+
+  .professor img {
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 250px;
+    height: auto;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  #content .ta h2 {
+    margin-top: 30px;
+  }
 }
 
 @media screen and (max-width: 900px) {

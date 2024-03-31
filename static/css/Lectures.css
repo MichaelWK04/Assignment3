@@ -48,19 +48,6 @@ td {
   text-align: center;
 }
 
-#content a:link,
-#content a:visited {
-  color: #666666;
-}
-
-#content a:hover {
-  color: #aaaaaa;
-}
-
-#content a:active {
-  color: #dddddd;
-}
-
 @media screen and (max-width: 900px) {
   #content {
     padding: 20px 20px 100px;

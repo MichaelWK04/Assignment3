@@ -13,19 +13,6 @@
   margin-bottom: 20px;
 }
 
-#content a:link,
-#content a:visited {
-  color: #666666;
-}
-
-#content a:hover {
-  color: #aaaaaa;
-}
-
-#content a:active {
-  color: #dddddd;
-}
-
 div .image {
   margin-top: 5px;
   overflow-x: auto;

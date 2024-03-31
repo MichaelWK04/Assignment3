@@ -22,19 +22,6 @@
   padding-bottom: 12px;
 }
 
-#content a:link,
-#content a:visited {
-  color: #666666;
-}
-
-#content a:hover {
-  color: #aaaaaa;
-}
-
-#content a:active {
-  color: #dddddd;
-}
-
 .mathlab {
   margin-top: 20px;
 }
