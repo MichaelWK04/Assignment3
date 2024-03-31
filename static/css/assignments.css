@@ -27,9 +27,3 @@
 #content th {
   border-bottom: 2px solid;
 }
-
-@media screen and (max-width: 900px) {
-  #content {
-    padding: 20px 20px 100px;
-  }
-}
