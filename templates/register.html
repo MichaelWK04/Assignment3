@@ -15,23 +15,23 @@
         <h1>Register</h1>
         <form action="http://127.0.0.1:5000/register" method="post">
             <label for="username">Username</label>
-            <input type="text" id="Username" name="Username">
+            <input type="text" id="Username" name="Username" required="">
 
             <label for="email">Email</label>
-            <input type="text" id="Email" name="Email">
+            <input type="email" id="Email" name="Email" required="">
 
             <label for="password">Password</label>
-            <input type="text" id="Password" name="Password">
+            <input type="password" id="Password" name="Password" required="">
 
             <section class="usertype">
-                <p>Register as a student or teacher?</p>
+                <p>Register as a Student or Instructor?</p>
                 <div class="radbuttons">
                     <div class="studentbutton">
-                        <input type="radio" id="Student" name="Type" value="Student">
+                        <input type="radio" id="Student" name="Type" value="Student" required="">
                         <label for="Student">Student</label>
                     </div>
                     <div class="teacherbutton">
-                        <input type="radio" id="Instructor" name="Type" value="Instructor">
+                        <input type="radio" id="Instructor" name="Type" value="Instructor" required="">
                         <label for="Instructor">Instructor</label>
                     </div>
                 </div>
