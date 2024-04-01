@@ -89,23 +89,19 @@ def register():
         type = request.form['Type']
         username_exists = Student.query.filter_by(username = username).first()
         email_exists = Student.query.filter_by(email = email).first()
-        if username_exists or email_exists:
+        if username_exists:
             flash('Username \'' + username + '\' has already been taken! Please try again.', 'Error')
+            return render_template('register.html')
+        elif email_exists:
+            flash('Email ' + email + ' has already been taken! Please try again.', 'Error')
             return render_template('register.html')
         username_exists = Instructor.query.filter_by(username = username).first()
         email_exists = Instructor.query.filter_by(email = email).first()
-        if username_exists or email_exists:
+        if username_exists:
             flash('Username \'' + username + '\' has already been taken! Please try again.', 'Error')
             return render_template('register.html')
-        user_name_exists = Student.query.filter_by(email = email).first()
-        email_exists = Student.query.filter_by(email = email).first()
-        if user_name_exists or email_exists:
-            flash('Username ' + email + ' has already been taken! Please try again.', 'Error')
-            return render_template('register.html')
-        user_name_exists = Instructor.query.filter_by(email = email).first()
-        email_exists = Instructor.query.filter_by(email = email).first()
-        if user_name_exists or email_exists:
-            flash('Username ' + email + ' has already been taken! Please try again.', 'Error')
+        elif email_exists:
+            flash('Email ' + email + ' has already been taken! Please try again.', 'Error')
             return render_template('register.html')
         hashed_password=bcrypt.generate_password_hash(request.form['Password']).decode('utf-8')
         reg_details =(username,
