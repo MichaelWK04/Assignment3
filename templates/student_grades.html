@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/student_grades.css') }}"
+    />
+    <title>CSCB20 - Grades</title>
+  </head>
+
+  <body>
+    {% extends "template.html" %} {% block content %}
+    <section id="content">
+      <h1>Grades</h1>
+      <p>
+        Hi {{ session.name }}! This is where you can see all of your grades, and
+        request a regrade
+      </p>
+      <table>
+        <tr>
+          <th>A1</th>
+          <th>A2</th>
+          <th>A3</th>
+          <th>Midterm</th>
+          <th>Final</th>
+        </tr>
+        <tr>
+          {% for grade in [a1, a2, a3, midterm, final] %}
+          <td>{% if grade == -1 %}{% else %}{{ grade }}{% endif %}</td>
+          {% endfor %}
+        </tr>
+      </table>
+    </section>
+    {% endblock %}
+  </body>
+</html>
