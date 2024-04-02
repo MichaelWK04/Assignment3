@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/instructor_grades.css') }}"
+    />
+    <title>CSCB20 - Grades</title>
+  </head>
+
+  <body>
+    {% extends "template.html" %} {% block content %}
+    <section id="content">
+      <h1>Grades</h1>
+      <p>
+        Hi {{ session.name }}! This is where you can see enter grades of your
+        students
+      </p>
+      <!-- <table>
+        <tr>
+          <th>A1</th>
+          <th>A2</th>
+          <th>A3</th>
+          <th>Midterm</th>
+          <th>Final</th>
+        </tr>
+        <tr>
+          {% for grade in [a1, a2, a3, midterm, final] %}
+          <td>{% if grade == -1 %}{% else %}{{ grade }}{% endif %}</td>
+          {% endfor %}
+        </tr>
+      </table> -->
+      <div class="grades-header">
+        <p>Student</p>
+        <p>A1</p>
+        <p>A2</p>
+        <p>A3</p>
+        <p>Midterm</p>
+        <p>Final</p>
+      </div>
+
+      <hr>
+      
+        {% for i in range(10) %}
+      <form action="http://127.0.0.1:5000/grades" method="post">
+        <label for="sid">Student (id):</label>
+        <input type="number" id="sid" name="sid" hidden />
+        <input type="number" id="a1" name="a1" min="0" max="100" oninput="validity.valid||(value='');"/>
+        <input type="number" id="a2" name="a2" min="0" max="100" oninput="validity.valid||(value='');"/>
+        <input type="number" id="a3" name="a3" min="0" max="100" oninput="validity.valid||(value='');"/>
+        <input type="number" id="mid" name="mid" min="0" max="100" oninput="validity.valid||(value='');"/>
+        <input type="number" id="final" name="final" min="0" max="100" oninput="validity.valid||(value='');"/>
+        <input type="submit" value="Update"></input>
+      </form>
+      {% endfor %}
+      
+    </section>
+    {% endblock %}
+  </body>
+</html>

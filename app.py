@@ -6,7 +6,7 @@ app = Flask(__name__)
 bcrypt=Bcrypt(app)
 
 app.config['SECRET_KEY'] = '9ef34b5735d31c656503a4c799d71674c7e0b4e2fd255d2c91b3e381af5c81dc'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///assignment3.db'
 db = SQLAlchemy(app)
 
 class Student(db.Model):
@@ -29,9 +29,13 @@ class Feedback(db.Model):
     q4=db.Column(db.Text, primary_key = True, nullable = False)
     
 class Mark(db.Model):
-    assesment=db.Column(db.String(20), primary_key = True, nullable = False)
-    mark=db.Column(db.Integer, primary_key = True, nullable = False)
     sid=db.Column(db.Integer, primary_key = True, nullable = False)
+    a1=db.Column(db.Integer, nullable = False)
+    a2=db.Column(db.Integer, nullable = False)
+    a3=db.Column(db.Integer, nullable = False)
+    midterm=db.Column(db.Integer, nullable = False)
+    final=db.Column(db.Integer, nullable = False)
+    
 
     
 class Remark(db.Model):
@@ -146,14 +150,32 @@ def resources():
 def tests():
     return render_template('tests.html')
 
+@app.route('/grades', methods = ['GET', 'POST'])
+def grades():
+    if (session['type'] == 'Student'):
+        student = db.session.query(Student).filter(Student.username == session['name'])
+        grades = db.session.query(Mark).get(student[0].id)
+        return render_template('student_grades.html', a1 = grades.a1, a2 = grades.a2, a3 = grades.a3, mid = grades.midterm, final = grades.final)
+    else:
+        if request.method == 'GET':
+            grades = db.session.query(Mark)
+            return render_template('instructor_grades.html', grades=grades)
+        
+
 def add_student(reg_details):
     user = Student(username = reg_details[0], email = reg_details[1], password = reg_details[2])
     db.session.add(user)
     db.session.commit()
+    add_grades([user.id, -1, -1, -1, -1, -1])
 
 def add_instructor(reg_details):
     user = Instructor(username = reg_details[0], email = reg_details[1], password = reg_details[2])
     db.session.add(user)
+    db.session.commit()
+
+def add_grades(grades_details):
+    grades = Mark(sid = grades_details[0], a1 = grades_details[1], a2 = grades_details[2], a3 = grades_details[3], midterm = grades_details[4], final = grades_details[5])
+    db.session.add(grades)
     db.session.commit()
 
 if __name__ == '__main__':

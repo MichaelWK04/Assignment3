@@ -1,89 +1,98 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/template.css') }}" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/template.css') }}"
+    />
     <title>CSCB20 - Template</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <nav id="navbar">
-        <h1 class="navbar-title">
-            <a href="{{ url_for('home') }}">CSCB20</a>
-        </h1>
-        <input type="checkbox" id="check" />
-        <label for="check" class="checkbtn">
-            <img src="{{ url_for('static', filename='images/menu-bar.png') }}" alt="" />
-        </label>
-        <ul class="navbar-links">
-            {% if session.name %}
-            <li class="navbar-link">
-                <a href="{{ url_for('courseteam') }}">Course Team</a>
-            </li>
-            <li class="navbar-link">
-                <a href="https://piazza.com/class/lqy466htv8g5xb">Piazza</a>
-            </li>
-            <li class="navbar-link">
-                <a href="{{ url_for('calendar') }}">Calendar</a>
-            </li>
-            <li class="navbar-link">
-                <a href="{{ url_for('lectures') }}">Lectures</a>
-            </li>
-            <li class="navbar-link">
-                <a href="{{ url_for('lab') }}">Labs</a>
-            </li>
-            <li class="navbar-link">
-                <a href="{{ url_for('assignments') }}">Assignments</a>
-            </li>
-            <li class="navbar-link">
-                <a href="{{ url_for('tests') }}">Tests</a>
-            </li>
-            <li class="navbar-link">
-                <a href="{{ url_for('resources') }}">Resources</a>
-            </li>
-            <li class="navbar-link">
-                <a href="{{ url_for('feedback') }}">Feedback</a>
-            </li>
-            <li class="navbar-link">
-                <a href="{{ url_for('logout') }}">Logout</a>
-            </li>
-            {% else %}
-            <li class="navbar-link">
-                <a href="{{ url_for('login') }}">Login</a>
-            </li>
-            <li class="navbar-link">
-                <a href="{{ url_for('register') }}">Register</a>
-            </li>
-            {% endif %}
-        </ul>
+      <h1 class="navbar-title">
+        <a href="{{ url_for('home') }}">CSCB20</a>
+      </h1>
+      <input type="checkbox" id="check" />
+      <label for="check" class="checkbtn">
+        <img
+          src="{{ url_for('static', filename='images/menu-bar.png') }}"
+          alt=""
+        />
+      </label>
+      <ul class="navbar-links">
+        {% if session.name %}
+        <li class="navbar-link">
+          <a href="{{ url_for('courseteam') }}">Course Team</a>
+        </li>
+        <li class="navbar-link">
+          <a href="https://piazza.com/class/lqy466htv8g5xb">Piazza</a>
+        </li>
+        <li class="navbar-link">
+          <a href="{{ url_for('calendar') }}">Calendar</a>
+        </li>
+        <li class="navbar-link">
+          <a href="{{ url_for('lectures') }}">Lectures</a>
+        </li>
+        <li class="navbar-link">
+          <a href="{{ url_for('lab') }}">Labs</a>
+        </li>
+        <li class="navbar-link">
+          <a href="{{ url_for('assignments') }}">Assignments</a>
+        </li>
+        <li class="navbar-link">
+          <a href="{{ url_for('grades') }}">Grades</a>
+        </li>
+        <li class="navbar-link">
+          <a href="{{ url_for('tests') }}">Tests</a>
+        </li>
+        <li class="navbar-link">
+          <a href="{{ url_for('resources') }}">Resources</a>
+        </li>
+        <li class="navbar-link">
+          <a href="{{ url_for('feedback') }}">Feedback</a>
+        </li>
+        <li class="navbar-link">
+          <a href="{{ url_for('logout') }}">Logout</a>
+        </li>
+        {% else %}
+        <li class="navbar-link">
+          <a href="{{ url_for('login') }}">Login</a>
+        </li>
+        <li class="navbar-link">
+          <a href="{{ url_for('register') }}">Register</a>
+        </li>
+        {% endif %}
+      </ul>
     </nav>
 
-    {% block content %}
-    {% endblock %}
+    {% block content %} {% endblock %}
 
     <footer>
-        <div class="contact">
-            <h4>Contact the instructor:</h4>
-            <ul>
-                <li>Name: Purva Gawde</li>
-                <li>Email: purva.gawde@utoronto.ca</li>
-                <li>Phone: (647) 601-4658</li>
-                <li>Office: IC 484</li>
-                <li>Office Hours: TUE 12:00 - 13:00</li>
-            </ul>
-        </div>
-        <div class="copyright">
-            <a href="https://web.cs.toronto.edu/about/our-department" target=”_blank”>
-                UofT Faculty of Computer Science
-            </a>
-            <p>
-                Site designed and created by Michael Walker, Michael Kim and Orhan
-                Cangurel
-            </p>
-        </div>
+      <div class="contact">
+        <h4>Contact the instructor:</h4>
+        <ul>
+          <li>Name: Purva Gawde</li>
+          <li>Email: purva.gawde@utoronto.ca</li>
+          <li>Phone: (647) 601-4658</li>
+          <li>Office: IC 484</li>
+          <li>Office Hours: TUE 12:00 - 13:00</li>
+        </ul>
+      </div>
+      <div class="copyright">
+        <a
+          href="https://web.cs.toronto.edu/about/our-department"
+          target="”_blank”"
+        >
+          UofT Faculty of Computer Science
+        </a>
+        <p>
+          Site designed and created by Michael Walker, Michael Kim and Orhan
+          Cangurel
+        </p>
+      </div>
     </footer>
-</body>
-
+  </body>
 </html>
