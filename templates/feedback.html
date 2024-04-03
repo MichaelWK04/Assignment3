@@ -21,12 +21,15 @@
             {% if messages %}
             <ul class=flash>
                 {% for category, message in messages %}
-                <div> <strong>{{ category }}</strong> - {{ message }} </div>
+                    {% if category == '1'%}
+                        <script>alert("Your feedback has been received.")</script>
+                    {% else %}
+                        <div> <strong>{{ category }}</strong> - {{ message }} </div>
+                    {%endif%}
                 {% endfor %}
             </ul>
             {% endif %}
             {% endwith %}
-            <div id="message">{{message}}</div>
             <table class="Instructor table">
                 <tr>
                     <th>List of Instructor Name(s)</th>
