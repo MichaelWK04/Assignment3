@@ -131,36 +131,9 @@ def calendar():
 def courseteam():
     return render_template('courseteam.html')
 
-@app.route('/feedback', methods=['GET', 'POST'])
+@app.route('/feedback')
 def feedback():
-    if session['type']== 'Student':
-        if request.method == 'GET':
-            query_intructor_result = query_intructor()
-            return render_template('feedback.html', query_intructor_result=query_intructor_result )
-        else:
-            query_intructor_result = query_intructor()
-            username=request.form['InstructorName_ID']
-            Instructor1 = Instructor.query.filter_by(username= username).first()
-            if not Instructor1:
-                flash('Please put in valid instructor name', 'Error')
-                return render_template('feedback.html', query_intructor_result=query_intructor_result )
-            else:
-                feedback_details = (
-
-                    request.form['InstructorName_ID'],
-                    request.form['Ans1_ID'],
-                    request.form['Ans2_ID'],
-                    request.form['Ans3_ID'],
-                    request.form['Ans4_ID']
-                )
-                add_feedback(feedback_details)
-                message='Feedback has been received'
-                return render_template('feedback.html', query_intructor_result=query_intructor_result, message=message)
-    else:
-        query_feedback_result=query_feedback()
-        return render_template('Instructor_feedback.html', query_feedback_result=query_feedback_result)
-
-        
+    return render_template('feedback.html')
 
 @app.route('/lab')
 def lab():
@@ -201,26 +174,10 @@ def add_instructor(reg_details):
     db.session.add(user)
     db.session.commit()
 
-<<<<<<< HEAD
-def add_feedback(feedback_details):
-        feedback = Feedback(to=feedback_details[0], q1= feedback_details[1], q2=feedback_details[2], q3=feedback_details[3], q4=feedback_details[4])
-        db.session.add(feedback)
-        db.session.commit()
-
-def query_intructor():
-    query_intructor=Instructor.query.all()
-    return query_intructor
-
-def query_feedback():
-    name = session['name']
-    query_feedback=Feedback.query.filter_by(to=name)
-    return query_feedback
-=======
 def add_grades(grades_details):
     grades = Mark(sid = grades_details[0], a1 = grades_details[1], a2 = grades_details[2], a3 = grades_details[3], midterm = grades_details[4], final = grades_details[5])
     db.session.add(grades)
     db.session.commit()
 
->>>>>>> afa68dd78bc1afa3bd8e61e92cff8c1d96f37d36
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
