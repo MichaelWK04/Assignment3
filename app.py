@@ -158,9 +158,24 @@ def grades():
         grades = db.session.query(Mark).get(student[0].id)
         return render_template('student_grades.html', a1 = grades.a1, a2 = grades.a2, a3 = grades.a3, mid = grades.midterm, final = grades.final)
     else:
-        if request.method == 'GET':
-            grades = db.session.query(Mark)
-            return render_template('instructor_grades.html', grades=grades)
+        if request.method == 'POST':
+            sid = int(request.form['sid'])
+            a1 = -1 if request.form['a1'] == '' else int(request.form['a1'])
+            a2 = -1 if request.form['a2'] == '' else int(request.form['a2'])
+            a3 = -1 if request.form['a3'] == '' else int(request.form['a3'])
+            mid = -1 if request.form['mid'] == '' else int(request.form['mid'])
+            final = -1 if request.form['final'] == '' else int(request.form['final'])
+            update = db.session.query(Mark).filter_by(sid = sid).first()
+            update.a1 = a1
+            update.a2 = a2
+            update.a3 = a3
+            update.midterm = mid
+            update.final = final
+            db.session.commit()
+
+        grades = db.session.query(Mark, Student).join(Student, Mark.sid == Student.id).all()
+        print(grades)
+        return render_template('instructor_grades.html', grades=grades)
         
 
 def add_student(reg_details):
