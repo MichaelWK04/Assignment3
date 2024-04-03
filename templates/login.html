@@ -25,7 +25,11 @@
             {% if messages %}
             <ul class=flashes>
                 {% for category, message in messages %}
-                <div> <strong>{{ category }}</strong> - {{ message }} </div>
+                    {% if category == 'success' %}
+                        <script>alert("Success! Please log in.")</script>
+                    {% else %}
+                        <div> <strong>{{ category }}</strong> - {{ message }} </div>
+                    {% endif %}
                 {% endfor %}
             </ul>
             {% endif %}

@@ -116,7 +116,7 @@ def register():
             add_student(reg_details)
         else:
             add_instructor(reg_details)
-        flash('registration successful! Please login now:')
+        flash('', 'success')
         return redirect(url_for('login'))
 
 @app.route('/assignments')
