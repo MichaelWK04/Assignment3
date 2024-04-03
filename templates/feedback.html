@@ -14,17 +14,46 @@
     <section id="content">
         <h1>Feedback</h1>
         <p>
-            Use the form below to send an anonymous message to the instructor. You
-            don’t need name and email unless you want a direct response.
+            Use the form below to provide an anonymous feedback to the instructor. 
         </p>
-        <form action="">
-            <label for="name">Name (Optional)</label>
-            <input name="name" type="text" />
-            <label for="email">Email (Optional)</label>
-            <input name="email" type="text" />
-            <label for="message">Your Message</label>
-            <textarea name="message" id="feedback-message" cols="30" rows="10" required></textarea>
-            <input type="submit" />
+        <form action="http://127.0.0.1:5000/feedback" method = "POST">
+            {% with messages = get_flashed_messages(with_categories = True) %}
+            {% if messages %}
+            <ul class=flash>
+                {% for category, message in messages %}
+                <div> <strong>{{ category }}</strong> - {{ message }} </div>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% endwith %}
+            <div id="message">{{message}}</div>
+            <table class="Instructor table">
+                <tr>
+                    <th>List of Instructor Name(s)</th>
+                </tr>
+                {% for Instructor in query_intructor_result %}
+                <tr>
+                    <td>{{ Instructor.username }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            <label for="InstructorName">Instructor's name for this feedback</label>
+            <input name="InstructorName_ID" id="InstructorName_ID "type="text" required />
+
+
+            <label for="Ans1">What do you like about the instructor teaching?</label>
+            <textarea name="Ans1_ID" id="Ans1_ID "type="text" required cols="30" rows="10"></textarea> 
+
+            <label for="Ans2">What do you recommend the instructor to do to improve their teaching?</label>
+            <textarea name="Ans2_ID" id="Ans2_ID "type="text" required cols="30" rows="10"></textarea> 
+
+            <label for="Ans3">What do you like about the labs?</label>
+            <textarea name="Ans3_ID" id="Ans3_ID "type="text" required cols="30" rows="10"></textarea>
+
+            <label for="Ans4">What do you recommend the lab instructors to do to improve their lab teaching?</label>
+            <textarea name="Ans4_ID" id="Ans4_ID "type="text" required cols="30" rows="10"></textarea>
+
+            <button type="submit">Submit</button>
         </form>
     </section>
     {% endblock %}
