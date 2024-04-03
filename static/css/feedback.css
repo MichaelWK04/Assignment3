@@ -2,7 +2,10 @@
   font-size: 1.3em;
   margin-top: 30px;
 }
-
+#content div{
+  text-align: center;
+  color: blue;
+}
 form {
   margin-top: 30px;
 }
@@ -22,6 +25,20 @@ form {
   font-size: 1.3em;
   background-color: lightgray;
 }
+#content table{
+  margin-bottom: 20px;
+  text-align: center;
+  border: 1px solid;
+
+}
+#content th{
+  font-size: 1.3em;
+  text-align: center;
+}
+#content td{
+  font-size: 1.1em;
+  border: 1px solid;
+}
 
 #content textarea {
   display: block;
@@ -33,7 +50,7 @@ form {
   background-color: lightgray;
 }
 
-#content input[type="submit"] {
+#content button[type="submit"] {
   background-color: lightgray;
   border: none;
   font-size: 1.3em;
@@ -41,7 +58,14 @@ form {
   padding: 10px 20px;
 }
 
-#content input[type="submit"]:hover {
+#content button[type="submit"]:hover {
   cursor: pointer;
   color: white;
+}
+
+#content .flash {
+  color: red;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 8px;
 }
