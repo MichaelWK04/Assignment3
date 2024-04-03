@@ -154,8 +154,8 @@ def feedback():
                     request.form['Ans4_ID']
                 )
                 add_feedback(feedback_details)
-                message='Feedback has been received'
-                return render_template('feedback.html', query_intructor_result=query_intructor_result, message=message)
+                flash('', '1')
+                return render_template('feedback.html', query_intructor_result=query_intructor_result)
     else:
         query_feedback_result=query_feedback()
         return render_template('Instructor_feedback.html', query_feedback_result=query_feedback_result)
