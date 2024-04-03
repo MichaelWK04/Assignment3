@@ -43,15 +43,15 @@
 
       <hr>
       
-        {% for i in range(10) %}
+        {% for grade, student in grades %}
       <form action="http://127.0.0.1:5000/grades" method="post">
-        <label for="sid">Student (id):</label>
-        <input type="number" id="sid" name="sid" hidden />
-        <input type="number" id="a1" name="a1" min="0" max="100" oninput="validity.valid||(value='');"/>
-        <input type="number" id="a2" name="a2" min="0" max="100" oninput="validity.valid||(value='');"/>
-        <input type="number" id="a3" name="a3" min="0" max="100" oninput="validity.valid||(value='');"/>
-        <input type="number" id="mid" name="mid" min="0" max="100" oninput="validity.valid||(value='');"/>
-        <input type="number" id="final" name="final" min="0" max="100" oninput="validity.valid||(value='');"/>
+        <label for="sid">{{ student.username }} ({{ grade.sid }}):</label>
+        <input type="number" id="sid" name="sid" value="{{ grade.sid }}" hidden />
+        <input type="number" id="a1" name="a1" min="0" max="100" value="{% if grade.a1 != -1 %}{{ grade.a1 }}{% endif %}" oninput="validity.valid||(value='');"/>
+        <input type="number" id="a2" name="a2" min="0" max="100" value="{% if grade.a2 != -1 %}{{ grade.a2 }}{% endif %}" oninput="validity.valid||(value='');"/>
+        <input type="number" id="a3" name="a3" min="0" max="100" value="{% if grade.a3 != -1 %}{{ grade.a3 }}{% endif %}" oninput="validity.valid||(value='');"/>
+        <input type="number" id="mid" name="mid" min="0" max="100" value="{% if grade.midterm != -1 %}{{ grade.midterm }}{% endif %}" oninput="validity.valid||(value='');"/>
+        <input type="number" id="final" name="final" min="0" max="100" value="{% if grade.final != -1 %}{{ grade.final }}{% endif %}" oninput="validity.valid||(value='');"/>
         <input type="submit" value="Update"></input>
       </form>
       {% endfor %}
