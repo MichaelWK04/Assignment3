@@ -63,7 +63,7 @@ def login():
     if not person or not bcrypt.check_password_hash(person.password, password):
         person = Instructor.query.filter_by(username = username).first()
         if not person or not bcrypt.check_password_hash(person.password, password):
-            flash('Please check your login details and try again.', 'Error')
+            flash('Please check your login details and try again.', 'Denied')
             return render_template('login.html')
         else:
             student = False
@@ -95,18 +95,18 @@ def register():
         username_exists = Student.query.filter_by(username = username).first()
         email_exists = Student.query.filter_by(email = email).first()
         if username_exists:
-            flash('Username \'' + username + '\' has already been taken! Please try again.', 'Error')
+            flash('Username \'' + username + '\' has already been taken! Please try again.', 'Denied')
             return render_template('register.html')
         elif email_exists:
-            flash('Email ' + email + ' has already been taken! Please try again.', 'Error')
+            flash('Email ' + email + ' has already been taken! Please try again.', 'Denied')
             return render_template('register.html')
         username_exists = Instructor.query.filter_by(username = username).first()
         email_exists = Instructor.query.filter_by(email = email).first()
         if username_exists:
-            flash('Username \'' + username + '\' has already been taken! Please try again.', 'Error')
+            flash('Username \'' + username + '\' has already been taken! Please try again.', 'Denied')
             return render_template('register.html')
         elif email_exists:
-            flash('Email ' + email + ' has already been taken! Please try again.', 'Error')
+            flash('Email ' + email + ' has already been taken! Please try again.', 'Denied')
             return render_template('register.html')
         hashed_password=bcrypt.generate_password_hash(request.form['Password']).decode('utf-8')
         reg_details =(username,
