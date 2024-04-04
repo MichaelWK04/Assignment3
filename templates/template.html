@@ -45,6 +45,11 @@
         <li class="navbar-link">
           <a href="{{ url_for('grades') }}">Grades</a>
         </li>
+        {% if session.type == "Instructor" %}
+        <li class="navbar-link">
+          <a href="{{ url_for('regrade') }}">Regrade</a>
+        </li>
+        {% endif %}
         <li class="navbar-link">
           <a href="{{ url_for('tests') }}">Tests</a>
         </li>

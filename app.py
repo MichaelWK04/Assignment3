@@ -181,6 +181,27 @@ def grades():
     if (session['type'] == 'Student'):
         student = db.session.query(Student).filter(Student.username == session['name'])
         grades = db.session.query(Mark).get(student[0].id)
+        if request.method == 'POST':
+            assesment = request.form['assesment']
+            remark = request.form['explanation']
+            sid = student[0].id
+            mark = -1
+            match assesment:
+                case "A1":
+                    mark = grades.a1
+                case "A2":
+                    mark = grades.a2
+                case "A3":
+                    mark = grades.a3
+                case "Midterm":
+                    mark = grades.midterm
+                case "Final":
+                    mark = grades.final
+
+            exists = db.session.query(Remark).filter(Remark.sid == sid, Remark.mark == mark).first()
+            if not exists:
+                add_regrade([assesment, mark, sid, remark])
+        
         return render_template('student_grades.html', a1 = grades.a1, a2 = grades.a2, a3 = grades.a3, mid = grades.midterm, final = grades.final)
     else:
         if request.method == 'POST':
@@ -199,8 +220,12 @@ def grades():
             db.session.commit()
 
         grades = db.session.query(Mark, Student).join(Student, Mark.sid == Student.id).all()
-        print(grades)
         return render_template('instructor_grades.html', grades=grades)
+
+@app.route('/regrade')
+def regrade():
+    regrades = db.session.query(Remark, Student).join(Student, Remark.sid == Student.id).all()
+    return render_template('regrade.html', regrades = regrades)
         
 
 def add_student(reg_details):
@@ -232,6 +257,11 @@ def query_feedback():
     name = session['name']
     query_feedback=Feedback.query.filter_by(to=name)
     return query_feedback
+
+def add_regrade(regrade_details):
+    regrade = Remark(assesment = regrade_details[0], mark = regrade_details[1], sid = regrade_details[2], remark = regrade_details[3])
+    db.session.add(regrade)
+    db.session.commit()
 
 if __name__ == '__main__':
     app.run()
