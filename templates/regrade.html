@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/regrade.css') }}"
+    />
+    <title>CSCB20 - Regrade</title>
+  </head>
+
+  <body>
+    {% extends "template.html" %} {% block content %}
+    <section id="content">
+      <h1>Regrade</h1>
+      <p>Hi {{ session.name }}! This is where you can see regrade requests</p>
+      <div class="regrades">
+        {% for regrade, student in regrades %}
+        <div class="regrade">
+          <div class="regrade-header">
+            <p><b>Name: </b>{{ student.username }}</p>
+            <p><b>ID: </b>{{ regrade.sid }}</p>
+            <p><b>Mark at the time of request: </b>{{ regrade.mark }}</p>
+            <p><b>Assesment: </b>{{ regrade.assesment }}</p>
+          </div>
+          <div class="regrade-container">
+            <p>{{ regrade.remark }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+    {% endblock %}
+  </body>
+</html>

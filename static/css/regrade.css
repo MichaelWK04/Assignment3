@@ -1,0 +1,18 @@
+#content p {
+  font-size: 1.3em;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.regrade {
+  display: flex;
+  flex-direction: column;
+  background-color: lightgray;
+  padding-left: 15px;
+}
+
+.regrade-header {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}

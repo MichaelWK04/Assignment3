@@ -27,11 +27,38 @@
           <th>Final</th>
         </tr>
         <tr>
-          {% for grade in [a1, a2, a3, midterm, final] %}
+          {% for grade in [a1, a2, a3, mid, final] %}
           <td>{% if grade == -1 %}{% else %}{{ grade }}{% endif %}</td>
           {% endfor %}
         </tr>
       </table>
+      <h2>Request regrade:</h2>
+      <hr />
+      <form action="http://127.0.0.1:5000/grades" method="post">
+        <label for="assesment">Assesment:</label>
+        <select name="assesment" id="assesment">
+          {% if a1 >= 0 %}
+          <option value="A1">A1</option>
+          {% endif %} {% if a2 >= 0 %}
+          <option value="A2">A2</option>
+          {% endif %} {% if a3 >= 0 %}
+          <option value="A3">A3</option>
+          {% endif %} {% if mid >= 0 %}
+          <option value="Midterm">Midterm</option>
+          {% endif %} {% if final >= 0 %}
+          <option value="Final">Final</option>
+          {% endif %}
+        </select>
+        <label for="explanation">Explanation</label>
+        <textarea
+          name="explanation"
+          id="explanation"
+          cols="30"
+          rows="10"
+          required
+        ></textarea>
+        <input type="submit" />
+      </form>
     </section>
     {% endblock %}
   </body>
