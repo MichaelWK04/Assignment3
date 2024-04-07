@@ -1,58 +1,72 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/register.css') }}"
+    />
     <title>CSCB20 - Lectures</title>
-</head>
+  </head>
 
-<body>
-    {% extends "template.html" %}
-    {% block content %}
+  <body>
+    {% extends "template.html" %} {% block content %}
     <div id="content">
-        <h1>Register</h1>
-        <form action="http://127.0.0.1:5000/register" method="post">
-            <label for="username">Username</label>
-            <input type="text" id="Username" name="Username" required="">
+      <h1>Register</h1>
+      <form action="{{ url_for('register') }}" method="post">
+        <label for="username">Username</label>
+        <input type="text" id="Username" name="Username" required="" />
 
-            <label for="email">Email</label>
-            <input type="email" id="Email" name="Email" required="">
+        <label for="email">Email</label>
+        <input type="email" id="Email" name="Email" required="" />
 
-            <label for="password">Password</label>
-            <input type="password" id="Password" name="Password" required="">
+        <label for="password">Password</label>
+        <input type="password" id="Password" name="Password" required="" />
 
-            <section class="usertype">
-                <p>Register as a Student or Instructor?</p>
-                <div class="radbuttons">
-                    <div class="studentbutton">
-                        <input type="radio" id="Student" name="Type" value="Student" required="">
-                        <label for="Student">Student</label>
-                    </div>
-                    <div class="teacherbutton">
-                        <input type="radio" id="Instructor" name="Type" value="Instructor" required="">
-                        <label for="Instructor">Instructor</label>
-                    </div>
-                </div>
-            </section>
+        <section class="usertype">
+          <p>Register as a Student or Instructor?</p>
+          <div class="radbuttons">
+            <div class="studentbutton">
+              <input
+                type="radio"
+                id="Student"
+                name="Type"
+                value="Student"
+                required=""
+              />
+              <label for="Student">Student</label>
+            </div>
+            <div class="teacherbutton">
+              <input
+                type="radio"
+                id="Instructor"
+                name="Type"
+                value="Instructor"
+                required=""
+              />
+              <label for="Instructor">Instructor</label>
+            </div>
+          </div>
+        </section>
 
-            <button type="register">Register</button>
-            {% with messages = get_flashed_messages(with_categories = True) %}
-            {% if messages %}
-            <ul class=flashes>
-                {% for category, message in messages %}
-                <div> <strong>{{ category }}</strong> - {{ message }} </div>
-                {% endfor %}
-            </ul>
-            {% endif %}
-            {% endwith %}
-            <section class="login">
-                <p>Have an account? <a href="{{ url_for('login')}}">Click here to login!</a></p>
-            </section>
-        </form>
+        <button type="register">Register</button>
+        {% with messages = get_flashed_messages(with_categories = True) %} {% if
+        messages %}
+        <ul class="flashes">
+          {% for category, message in messages %}
+          <div><strong>{{ category }}</strong> - {{ message }}</div>
+          {% endfor %}
+        </ul>
+        {% endif %} {% endwith %}
+        <section class="login">
+          <p>
+            Have an account?
+            <a href="{{ url_for('login')}}">Click here to login!</a>
+          </p>
+        </section>
+      </form>
     </div>
     {% endblock %}
-</body>
-
+  </body>
 </html>

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, flash, redirect, url_for, session
+from flask import Flask, render_template, request, flash, redirect, url_for, session, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 
@@ -173,9 +173,12 @@ def grades():
                 case "Final":
                     mark = grades.final
 
-            exists = db.session.query(Remark).filter(Remark.sid == sid, Remark.mark == mark).first()
+            exists = db.session.query(Remark).filter(Remark.sid == sid, Remark.mark == mark, Remark.assesment == assesment).first()
             if not exists:
                 add_regrade([assesment, mark, sid, remark])
+                return jsonify({'regrade_exists': False})
+            else:
+                return jsonify({'regrade_exists': True})
         
         return render_template('student_grades.html', a1 = grades.a1, a2 = grades.a2, a3 = grades.a3, mid = grades.midterm, final = grades.final)
     else:
@@ -225,4 +228,4 @@ def add_regrade(regrade_details):
     db.session.commit()
 
 if __name__ == '__main__':
-    app.run()
+    app.run(port=5001)

@@ -7,6 +7,8 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='css/student_grades.css') }}"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/regrade.js') }}"></script>
     <title>CSCB20 - Grades</title>
   </head>
 
@@ -34,7 +36,7 @@
       </table>
       <h2>Request regrade:</h2>
       <hr />
-      <form action="http://127.0.0.1:5000/grades" method="post">
+      <form>
         <label for="assesment">Assesment:</label>
         <select name="assesment" id="assesment">
           {% if a1 >= 0 %}
@@ -57,6 +59,7 @@
           rows="10"
           required
         ></textarea>
+        <p id="message"></p>
         <input type="submit" />
       </form>
     </section>

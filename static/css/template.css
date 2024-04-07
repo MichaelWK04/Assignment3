@@ -26,7 +26,7 @@ body {
 
 .navbar-title {
   margin-left: 40px;
-  font-size: 2.0em;
+  font-size: 2em;
 }
 
 .navbar-links {
@@ -70,7 +70,7 @@ body {
   display: none;
 }
 
-@media (max-width: 1175px) {
+@media (max-width: 1300px) {
   .checkbtn {
     display: flex;
     z-index: 5;
@@ -94,7 +94,7 @@ body {
     align-items: center;
   }
 
-  #check:checked~.navbar-links {
+  #check:checked ~ .navbar-links {
     top: 60px;
   }
 }
@@ -109,7 +109,7 @@ body {
 }
 
 #content a:link {
-  color: #7F7F7F;
+  color: #7f7f7f;
 }
 
 #content a:hover {
