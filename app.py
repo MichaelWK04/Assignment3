@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, flash, redirect, url_for, session
+from flask import Flask, render_template, request, flash, redirect, url_for, session, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 
@@ -138,24 +138,15 @@ def feedback():
             query_intructor_result = query_intructor()
             return render_template('feedback.html', query_intructor_result=query_intructor_result )
         else:
-            query_intructor_result = query_intructor()
-            username=request.form['InstructorName_ID']
-            Instructor1 = Instructor.query.filter_by(username= username).first()
-            if not Instructor1:
-                flash('Please put in valid instructor name', 'Error')
-                return render_template('feedback.html', query_intructor_result=query_intructor_result )
-            else:
-                feedback_details = (
-
+            feedback_details = (
                     request.form['InstructorName_ID'],
                     request.form['Ans1_ID'],
                     request.form['Ans2_ID'],
                     request.form['Ans3_ID'],
                     request.form['Ans4_ID']
                 )
-                add_feedback(feedback_details)
-                flash('', '1')
-                return render_template('feedback.html', query_intructor_result=query_intructor_result)
+            add_feedback(feedback_details)
+            return jsonify({'success': True})
     else:
         query_feedback_result=query_feedback()
         return render_template('Instructor_feedback.html', query_feedback_result=query_feedback_result)
@@ -198,9 +189,12 @@ def grades():
                 case "Final":
                     mark = grades.final
 
-            exists = db.session.query(Remark).filter(Remark.sid == sid, Remark.mark == mark).first()
+            exists = db.session.query(Remark).filter(Remark.sid == sid, Remark.mark == mark, Remark.assesment == assesment).first()
             if not exists:
                 add_regrade([assesment, mark, sid, remark])
+                return jsonify({'regrade_exists': False})
+            else:
+                return jsonify({'regrade_exists': True})
         
         return render_template('student_grades.html', a1 = grades.a1, a2 = grades.a2, a3 = grades.a3, mid = grades.midterm, final = grades.final)
     else:
@@ -263,5 +257,19 @@ def add_regrade(regrade_details):
     db.session.add(regrade)
     db.session.commit()
 
+def add_feedback(feedback_details):
+        feedback = Feedback(to=feedback_details[0], q1= feedback_details[1], q2=feedback_details[2], q3=feedback_details[3], q4=feedback_details[4])
+        db.session.add(feedback)
+        db.session.commit()
+
+def query_intructor():
+    query_intructor=Instructor.query.all()
+    return query_intructor
+
+def query_feedback():
+    name = session['name']
+    query_feedback=Feedback.query.filter_by(to=name)
+    return query_feedback
+
 if __name__ == '__main__':
-    app.run()
+    app.run(port=5001)

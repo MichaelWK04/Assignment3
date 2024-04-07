@@ -1,65 +1,87 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/feedback.css') }}" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/feedback.css') }}"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/feedback.js') }}"></script>
     <title>CSCB20 - Feedback</title>
-</head>
+  </head>
 
-<body>
-    {% extends "template.html" %}
-    {% block content %}
+  <body>
+    {% extends "template.html" %} {% block content %}
     <section id="content">
-        <h1>Feedback</h1>
-        <p>
-            Use the form below to provide an anonymous feedback to the instructor. 
-        </p>
-        <form action="http://127.0.0.1:5000/feedback" method = "POST">
-            {% with messages = get_flashed_messages(with_categories = True) %}
-            {% if messages %}
-            <ul class=flash>
-                {% for category, message in messages %}
-                    {% if category == '1'%}
-                        <script>alert("Your feedback has been received.")</script>
-                    {% else %}
-                        <div> <strong>{{ category }}</strong> - {{ message }} </div>
-                    {%endif%}
-                {% endfor %}
-            </ul>
-            {% endif %}
-            {% endwith %}
-            <table class="Instructor table">
-                <tr>
-                    <th>List of Instructor Name(s)</th>
-                </tr>
-                {% for Instructor in query_intructor_result %}
-                <tr>
-                    <td>{{ Instructor.username }}</td>
-                </tr>
-                {% endfor %}
-            </table>
-            <label for="InstructorName">Instructor's name for this feedback</label>
-            <input name="InstructorName_ID" id="InstructorName_ID "type="text" required />
+      <h1>Feedback</h1>
+      <p>
+        Use the form below to provide an anonymous feedback to the instructor.
+      </p>
+      <form action="{{ url_for('feedback') }}" method="POST">
+        <label for="InstructorName_ID"
+          >Instructor's name for this feedback</label
+        >
+        <select name="InstructorName_ID" id="InstructorName_ID">
+          {% for Instructor in query_intructor_result %}
+          <option value="{{ Instructor.username }}">
+            {{ Instructor.username }}
+          </option>
+          {% endfor %}
+        </select>
 
+        <label for="Ans1"
+          >What do you like about the instructor teaching?</label
+        >
+        <textarea
+          name="Ans1_ID"
+          id="Ans1_ID "
+          type="text"
+          required
+          cols="30"
+          rows="10"
+        ></textarea>
 
-            <label for="Ans1">What do you like about the instructor teaching?</label>
-            <textarea name="Ans1_ID" id="Ans1_ID "type="text" required cols="30" rows="10"></textarea> 
+        <label for="Ans2"
+          >What do you recommend the instructor to do to improve their
+          teaching?</label
+        >
+        <textarea
+          name="Ans2_ID"
+          id="Ans2_ID "
+          type="text"
+          required
+          cols="30"
+          rows="10"
+        ></textarea>
 
-            <label for="Ans2">What do you recommend the instructor to do to improve their teaching?</label>
-            <textarea name="Ans2_ID" id="Ans2_ID "type="text" required cols="30" rows="10"></textarea> 
+        <label for="Ans3">What do you like about the labs?</label>
+        <textarea
+          name="Ans3_ID"
+          id="Ans3_ID "
+          type="text"
+          required
+          cols="30"
+          rows="10"
+        ></textarea>
 
-            <label for="Ans3">What do you like about the labs?</label>
-            <textarea name="Ans3_ID" id="Ans3_ID "type="text" required cols="30" rows="10"></textarea>
-
-            <label for="Ans4">What do you recommend the lab instructors to do to improve their lab teaching?</label>
-            <textarea name="Ans4_ID" id="Ans4_ID "type="text" required cols="30" rows="10"></textarea>
-
-            <button type="submit">Submit</button>
-        </form>
+        <label for="Ans4"
+          >What do you recommend the lab instructors to do to improve their lab
+          teaching?</label
+        >
+        <textarea
+          name="Ans4_ID"
+          id="Ans4_ID "
+          type="text"
+          required
+          cols="30"
+          rows="10"
+        ></textarea>
+        <p id="message"></p>
+        <input type="submit"></input>
+      </form>
     </section>
     {% endblock %}
-</body>
-
+  </body>
 </html>
