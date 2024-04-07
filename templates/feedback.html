@@ -7,6 +7,8 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='css/feedback.css') }}"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/feedback.js') }}"></script>
     <title>CSCB20 - Feedback</title>
   </head>
 
@@ -18,35 +20,16 @@
         Use the form below to provide an anonymous feedback to the instructor.
       </p>
       <form action="{{ url_for('feedback') }}" method="POST">
-        {% with messages = get_flashed_messages(with_categories = True) %} {% if
-        messages %}
-        <ul class="flash">
-          {% for category, message in messages %} {% if category == '1'%}
-          <script>
-            alert("Your feedback has been received.");
-          </script>
-          {% else %}
-          <div><strong>{{ category }}</strong> - {{ message }}</div>
-          {%endif%} {% endfor %}
-        </ul>
-        {% endif %} {% endwith %}
-        <table class="Instructor table">
-          <tr>
-            <th>List of Instructor Name(s)</th>
-          </tr>
+        <label for="InstructorName_ID"
+          >Instructor's name for this feedback</label
+        >
+        <select name="InstructorName_ID" id="InstructorName_ID">
           {% for Instructor in query_intructor_result %}
-          <tr>
-            <td>{{ Instructor.username }}</td>
-          </tr>
+          <option value="{{ Instructor.username }}">
+            {{ Instructor.username }}
+          </option>
           {% endfor %}
-        </table>
-        <label for="InstructorName">Instructor's name for this feedback</label>
-        <input
-          name="InstructorName_ID"
-          id="InstructorName_ID "
-          type="text"
-          required
-        />
+        </select>
 
         <label for="Ans1"
           >What do you like about the instructor teaching?</label
@@ -95,8 +78,8 @@
           cols="30"
           rows="10"
         ></textarea>
-
-        <button type="submit">Submit</button>
+        <p id="message"></p>
+        <input type="submit"></input>
       </form>
     </section>
     {% endblock %}

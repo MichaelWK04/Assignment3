@@ -11,7 +11,8 @@ form {
   font-size: 1.3em;
 }
 
-#content input[type="text"] {
+#content input[type="text"],
+#content select {
   display: block;
   width: 75%;
   margin-top: 30px;
@@ -21,6 +22,10 @@ form {
   border: none;
   font-size: 1.3em;
   background-color: lightgray;
+}
+
+#content select {
+  width: 50%;
 }
 
 #content textarea {
