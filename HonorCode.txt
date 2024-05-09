@@ -1,8 +1,0 @@
-We (Michael Walker, Michael Kim, Orhan Cangural) pledge that this program represents my own program code and that we have coded on my own.
-We received help from no one in designing and debugging my program.
-We have also read the plagiarism section in the course info sheet of CSC B20 and understand the consequences.
-
-Signed:
-Michael Walker #1009130913
-Michael Kim #1009201114
-Orhan Cangural #1009339226
